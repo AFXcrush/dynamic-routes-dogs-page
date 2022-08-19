@@ -5,12 +5,16 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function SomeDoggies({ doggies }) {
+  // Function to randomize the firsts three dogs of the list
+
   const [randomArray, setRandomArray] = useState([]);
 
   useEffect(() => {
     const randomDog = [...doggies].sort(() => 0.5 - Math.random());
     setRandomArray(randomDog.slice(0, 3));
   }, []);
+
+  // ***************
 
   return (
     <div className={styles.someDoggiesContainer}>
